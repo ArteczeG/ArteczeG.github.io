@@ -1,0 +1,793 @@
+
+<!DOCTYPE html>
+<html>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+    .container {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 105px 1500px 100px;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "menu"
+            "box1"
+            "stopka";
+    }
+
+    .menu {
+        grid-area: stopka;
+    }
+
+    .container1 {
+        grid-area: box1;
+    }
+
+    .stopka {
+        grid-area: stopka;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    :root {
+        --clr: rgb(78, 79, 84);
+    }
+
+    body {
+        background: rgb(155, 155, 157);
+        overflow-x: hidden;
+    }
+    /* Pasek Nawigacji */
+    .linki {
+        position: fixed;
+        z-index: 25;
+        margin-top: 35px;
+    }
+
+    .twitter {
+        width: 33.125px;
+        height: 70px;
+        background-color: white;
+        z-index: 3;
+        background-size: cover;
+        position: relative;
+        float: left;
+        margin-left: 10px;
+    }
+
+    .facebook {
+        width: 33.125px;
+        height: 70px;
+        background-color: white;
+        z-index: 2;
+        position: relative;
+        float: left;
+        margin-left: 4px;
+    }
+
+    .instagram {
+        width: 33.125px;
+        height: 70px;
+        background-color: white;
+        z-index: 2;
+        position: relative;
+        float: left;
+        margin-left: 4px;
+    }
+
+    .youtube {
+        width: 33.125px;
+        height: 70px;
+        background-color: white;
+        z-index: 2;
+        position: relative;
+        float: left;
+        margin-left: 4px;
+    }
+
+    .facebook ion-icon {
+        font-size: 32px;
+        margin-top: 15px;
+        color: var(--clr);
+    }
+
+    .instagram ion-icon {
+        font-size: 32px;
+        margin-top: 15px;
+        color: var(--clr);
+    }
+
+    .twitter ion-icon {
+        font-size: 32px;
+        margin-top: 15px;
+        color: var(--clr);
+    }
+
+    .youtube ion-icon {
+        font-size: 32px;
+        margin-top: 15px;
+        color: var(--clr);
+    }
+
+    .twitter:hover ion-icon {
+        transform: scale(1.25);
+        transition-duration: 1s;
+    }
+
+    .facebook:hover ion-icon {
+        transform: scale(1.25);
+        transition-duration: 1s;
+    }
+
+    .instagram:hover ion-icon {
+        transform: scale(1.25);
+        transition-duration: 1s;
+    }
+
+    .youtube:hover ion-icon {
+        transform: scale(1.25);
+        transition-duration: 1s;
+    }
+
+    .navbarfixed {
+        padding-top: 35px;
+        background: var(--clr);
+        width: 100%;
+        height: 105px;
+        position: fixed;
+        z-index: 10;
+        box-shadow: 0px 10px 6px 0px rgba(0, 0, 0, 1);
+    }
+
+    .navigation {
+        position: relative;
+        width: 100%;
+        height: 70px;
+        background: #fff;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 45px;
+    }
+
+        .navigation ul {
+            display: flex;
+            width: 350px;
+            margin-right: 8%;
+        }
+
+            .navigation ul li {
+                position: relative;
+                list-style: none;
+                width: 70px;
+                height: 70px;
+                z-index: 1;
+            }
+
+                .navigation ul li a {
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    width: 100%;
+                    text-align: center;
+                    font-weight: 500;
+                }
+
+                    .navigation ul li a .icon {
+                        position: relative;
+                        display: block;
+                        line-height: 75px;
+                        font-size: 1.5em;
+                        text-align: center;
+                        transition: 0.5s;
+                        color: black;
+                    }
+
+                .navigation ul li.active a .icon {
+                    transform: translateY(-32px);
+                }
+
+                .navigation ul li a .text {
+                    position: absolute;
+                    color: var(--clr);
+                    font-weight: 400;
+                    font-size: 0.75em;
+                    letter-spacing: 0.05em;
+                    transition: 0.5s;
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+
+                .navigation ul li.active a .text {
+                    opacity: 1;
+                    transform: translateY(10px);
+                }
+
+    .indicator {
+        position: absolute;
+        top: -50%;
+        width: 70px;
+        height: 70px;
+        background: #B58C4F;
+        border-radius: 50%;
+        border: 6px solid var(--clr);
+        transition: 0.5s;
+    }
+
+        .indicator::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -22px;
+            width: 20px;
+            height: 20px;
+            background: transparent;
+            border-top-right-radius: 20px;
+            box-shadow: 1px -10px 0 0 var(--clr);
+        }
+
+        .indicator::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -22px;
+            width: 20px;
+            height: 20px;
+            background: transparent;
+            border-top-left-radius: 20px;
+            box-shadow: -1px -10px 0 0 var(--clr);
+        }
+
+    .navigation ul li:nth-child(1).active ~ .indicator {
+        transform: translateX(calc(70px * 0));
+    }
+
+    .navigation ul li:nth-child(2).active ~ .indicator {
+        transform: translateX(calc(70px * 1));
+    }
+
+    .navigation ul li:nth-child(3).active ~ .indicator {
+        transform: translateX(calc(70px * 2));
+    }
+
+    .navigation ul li:nth-child(4).active ~ .indicator {
+        transform: translateX(calc(70px * 3));
+    }
+
+    .navigation ul li:nth-child(5).active ~ .indicator {
+        transform: translateX(calc(70px * 4));
+    }
+    .container1 {
+        position: relative;
+        width: 100%;
+        max-width: 1000px;
+        margin: auto;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        background: #fff;
+        border-left: 50px solid #fff;
+        border-right: 50px solid #fff;
+        box-shadow: 0 50px 75px rgba(0,0,0,0.1);
+    }
+
+        .container1 .top {
+            position: relative;
+            display: grid;
+            padding: 40px;
+            padding-bottom: 0;
+            grid-template-columns: 1fr 2fr;
+        }
+
+            .container1 .top .imgBx {
+                position: relative;
+                width: 100%;
+                display: flex;
+                align-items: center;
+            }
+
+                .container1 .top .imgBx .box {
+                    position: relative;
+                    width: 70%;
+                    min-width: 200px;
+                    aspect-ratio: 1;
+                    height: 200px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                }
+
+                    .container1 .top .imgBx .box img {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+
+            .container1 .top .profileText {
+                position: relative;
+                padding: 40px;
+                display: flex;
+                align-items: center;
+            }
+
+                .container1 .top .profileText h3 {
+                    font-size: 3em;
+                    letter-spacing: 0.1em;
+                    line-height: 1.2em;
+                    font-weight: 600;
+                    color: #333;
+                    border-left: 4px solid #B58C4F;
+                    padding-left: 120px;
+                }
+
+                    .container1 .top .profileText h3 span {
+                        position: relative;
+                        top: -10px;
+                        font-weight: 300;
+                        font-size: 0.5em;
+                    }
+
+        .container1 .contentBox {
+            position: relative;
+            min-height: 500px;
+            display: grid;
+            padding: 0 40px 40px;
+            grid-template-columns: 1fr 2fr;
+        }
+
+            .container1 .contentBox h3 {
+                border-left: 4px solid #B58C4F;
+                padding-left: 10px;
+                line-height: 1em;
+                font-weight: 600;
+                color: #333;
+                letter-spacing: 0.1em;
+                margin-bottom: 20px;
+                margin-top: 50px;
+            }
+
+            .container1 .contentBox ul {
+                position: relative;
+                margin: 10px 0;
+            }
+
+                .container1 .contentBox ul li {
+                    list-style: none;
+                    margin: 25px 0;
+                    line-height: 1em;
+                    color: #333;
+                    cursor: pointer;
+                    display: flex;
+                }
+
+                    .container1 .contentBox ul li .ion-icon2 {
+                        font-size: 1.2em;
+                        margin-right: 10px;
+                        color: #B58C4F;
+                    }
+
+                .container1 .contentBox ul.education li {
+                    flex-direction: column;
+                    margin: 25px 0;
+                }
+
+    h5 {
+        color: #B58C4F;
+    }
+
+    h4 {
+        color: #333;
+        font-weight: 500;
+        margin: 5px 0;
+    }
+
+    h6 {
+        color: #666;
+        font-weight: 300;
+        font-size: 1em;
+    }
+
+    .language li {
+        flex-direction: column;
+    }
+
+        .language li span {
+            color: #333;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+    .language .percent {
+        position: relative;
+        width: 100%;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        height: 6px;
+        background: #e3e3e3;
+        display: block;
+        overflow: hidden;
+    }
+
+        .language .percent div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: #B58C4F;
+        }
+
+    .container1 .contentBox ul.interest {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+        .container1 .contentBox ul.interest li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 20px 0px;
+        }
+
+            .container1 .contentBox ul.interest li .icon2 {
+                position: relative;
+                width: 40px;
+                height: 40px;
+                border-radius: 5px;
+                background: #B58C4F;
+                color: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .container1 .contentBox ul.interest li .ion-icon2 {
+                color: #fff !important;
+                margin-right: 0px;
+            }
+
+    p {
+        font-weight: 300;
+    }
+
+    .rightSide {
+        padding-left: 40px;
+    }
+
+    .about .box {
+        display: flex;
+        flex-direction: row;
+        margin: 20px 0;
+    }
+
+        .about .box .year_company {
+            min-width: 150px;
+            margin-bottom: 10px;
+        }
+
+            .about .box .year_company h5 {
+                color: #333;
+                font-weight: 600;
+            }
+
+                .about .box .year_company h5:nth-child(1) {
+                    color: #B58C4F;
+                }
+
+        .about .box .text2 h4 {
+            color: #B58C4F;
+            font-size: 16px;
+            margin: 0;
+        }
+
+    .about.skills .box {
+        position: relative;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        justify-content: center;
+        align-items: center;
+    }
+
+        .about.skills .box h4 {
+            color: #333;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .about.skills .box .percent {
+            position: relative;
+            width: 100%;
+            height: 10px;
+            background: #e3e3e3;
+        }
+
+            .about.skills .box .percent div {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                background: #B58C4F;
+            }
+
+    .icon {
+        margin-top: 0;
+    }
+
+    .text {
+        margin-top: 0;
+    }
+    
+    .stopka {
+        height: 100px;
+        background: #333;
+    }
+
+        .stopka ul {
+            display: flex;
+            height: 50px;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            justify-content: center;
+        }
+
+        .stopka li {
+            float: left;
+        }
+
+            .stopka li a {
+                display: block;
+                color: darkgrey;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+                .stopka li a:hover {
+                    background-color: #111;
+                }
+
+    .copyright {
+        padding-top: 5px;
+        width: 100%;
+        color: darkgrey;
+        text-align: center;
+    }
+</style>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Camprent</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="linki">
+            <div class="twitter">
+                <a href="https://twitter.com/?lang=pl%22%3E">
+                    <ion-icon name="logo-twitter"> </ion-icon>
+                </a>
+            </div>
+            <div class="facebook">
+                <a href="https://www.facebook.com/%22%3E">
+                    <span class="icon"> <ion-icon name="logo-facebook"> </ion-icon> </span>
+                </a>
+            </div>
+            <div class="instagram">
+                <a href="https://www.instagram.com/%22%">
+                    <ion-icon name="logo-instagram"> </ion-icon>
+                </a>
+            </div>
+            <div class="youtube">
+                <a href="https://www.youtube.com/%22%">
+                    <ion-icon name="logo-youtube"> </ion-icon>
+                </a>
+            </div>
+        </div>
+        <div class="navbarfixed">
+            <div class="navigation">
+                <ul>
+                    <li class="list">
+                        <a href="glowna.html">
+                            <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                            <span class="text">Główna</span>
+                        </a>
+                    </li>
+
+                    <li class="list">
+                        <a href="profile.html">
+                            <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                            <span class="text">Profil</span>
+                        </a>
+                    </li>
+
+                    <li class="list active">
+                        <a href="cv.html">
+                            <span class="icon"><ion-icon name="call-outline"></ion-icon></span>
+                            <span class="text">Kontakt</span>
+                        </a>
+                    </li>
+
+                    <li class="list">
+                        <a href="glowna.html #kolarz">
+                            <span class="icon"><ion-icon name="camera-outline"></ion-icon></span>
+                            <span class="text">Galeria</span>
+                        </a>
+                    </li>
+
+                    <li class="list">
+                        <a href="glowna.html #sektekst">
+                            <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                            <span class="text">Newsletter</span>
+                        </a>
+                    </li>
+                    <div class="indicator"></div>
+                </ul>
+            </div>
+        </div>
+        <div class="container1">
+            <div class="top">
+                <div class="imgBx">
+                    <div class="box">
+                        <img src="logocv.png">
+                    </div>
+                </div>
+                <div class="profileText">
+                    <h3>Camprent<br><span>Wypożyczalnia<br />Kamperów i przyczep</span></h3>
+                </div>
+            </div>
+            <div class="contentBox">
+                <div class="leftSide">
+                    <h3>Kontakt</h3>
+                    <ul>
+                        <li>
+                            <span class="icon2"><ion-icon class="ion-icon2" name="call-outline"></ion-icon></span>
+                            <span class="text2">+48 123 456 789</span>
+                        </li>
+                        <li>
+                            <span class="icon2"><ion-icon class="ion-icon2" name="mail-outline"></ion-icon></span>
+                            <span class="text2">camprent@gmail.com</span>
+                        </li>
+                        <li>
+                            <span class="icon2"><ion-icon class="ion-icon2" name="earth-outline"></ion-icon></span>
+                            <span class="text2">www.camprent.com</span>
+                        </li>
+                        <li>
+                            <span class="icon2"><ion-icon class="ion-icon2" name="location-outline"></ion-icon></span>
+                            <span class="text2"> Skawina, Polska</span>
+                        </li>
+                    </ul>
+                    <h3>Edukacja</h3>
+                    <ul class="education">
+                        <li>
+                            <h5>2021-2023</h5>
+                            <h4>Technik Informatyk</h4>
+                            <h6>ZSEL 1 Kraków</h6>
+                        </li>
+
+                    </ul>
+                    <h3>Ilość pozytywnych ocen</h3>
+                    <ul class="language">
+                        <li>
+                            <span class="text">OLX</span>
+                            <span class="percent">
+                                <div style="width: 90%"></div>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="text">Google</span>
+                            <span class="percent">
+                                <div style="width: 79%"></div>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="text">Allegro</span>
+                            <span class="percent">
+                                <div style="width: 85%"></div>
+                            </span>
+                        </li>
+                    </ul>
+                    <h3>Możliwości Wypożyczeń</h3>
+                    <ul class="interest">
+                        <li><span class="icon2"><ion-icon name="bus"></ion-icon></span>Kampery 2-os</li>
+                        <li><span class="icon2"><ion-icon name="car"></ion-icon></span>Kampery 4-os</li>
+                        <li><span class="icon2"><ion-icon name="storefront"></ion-icon></span>Przyczepy Lekkie</li>
+                        <li><span class="icon2"><ion-icon name="train"></ion-icon></span>Przyczepy Ciężkie</li>
+                    </ul>
+                </div>
+                <div class="rightSide">
+                    <div class="about">
+                        <h3>O mnie</h3>
+                        <p>
+                            Camprent to firma specjalizująca się w wynajmie kamperów i przyczep kempingowych. Dzięki naszym usługom klienci mogą wyruszyć na podróż po całym kraju lub za granicę, mając ze sobą swój własny pokój z widokiem na świat. Nasza firma oferuje szeroki wybór pojazdów, w różnych rozmiarach i wyposażeniu, aby sprostać oczekiwaniom każdego klienta. Dodatkowo, Camprent dba o pełne zadowolenie klientów, zapewniając kompleksową obsługę i wsparcie na każdym etapie wypożyczenia.<br><br>
+                        </p>
+                    </div>
+                    <div class="about">
+                        <h3>Historia Camprent</h3>
+                        <div class="box">
+                            <div class="year_company">
+                                <h5>2012-2023</h5>
+                                <h5>Nasza firma istnieje już od 11 lat pod tą samą nazwą!</h5>
+                            </div>
+
+                        </div>
+                        <div class="about skills">
+                            <h3>Podsumowanie</h3>
+                            <div class="box">
+                                <h4>Oceny</h4>
+                                <span class="percent">
+                                    <div style="width: 88%"></div>
+                                </span>
+                            </div>
+                            <div class="box">
+                                <h4>Ceny</h4>
+                                <span class="percent">
+                                    <div style="width: 85%"></div>
+                                </span>
+                            </div>
+                            <div class="box">
+                                <h4>Dostępność</h4>
+                                <span class="percent">
+                                    <div style="width: 90%"></div>
+                                </span>
+                            </div>
+                            <div class="box">
+                                <h4>Nowoczesność</h4>
+                                <span class="percent">
+                                    <div style="width: 90%"></div>
+                                </span>
+                            </div>
+                            <div class="box">
+                                <h4>Doświadczenie Firmy</h4>
+                                <span class="percent">
+                                    <div style="width: 75%"></div>
+                                </span>
+                            </div>
+                            <div class="box">
+                                <h4>Kompetencje Firmy</h4>
+                                <span class="percent">
+                                    <div style="width: 98%"></div>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="stopka">
+            <ul>
+                <li><a href="glowna.html">Główna</a></li>
+                <li><a href="profile.html">Rejestracja</a></li>
+                <li><a href="profilelogin.html">Logowanie</a></li>
+                <li><a href="cv.html">Kontakt</a></li>
+            </ul>
+            <div class="copyright">Copyright | Company Lorem Ipsum 2023</div>
+        </div>
+    </div>
+
+    <script>
+        const list = document.querySelectorAll('.list');
+        function activeLink() {
+            list.forEach(item => item.classList.remove('active'));
+            this.classList.add('active');
+        }
+        list.forEach(item =>
+            item.addEventListener('click', activeLink))
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

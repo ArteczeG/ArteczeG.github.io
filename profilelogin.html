@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+    .container {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 105px 760px 100px;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "menu"
+            "box1"
+            "stopka";
+    }
+
+    .menu {
+        grid-area: stopka;
+    }
+
+    .box1 {
+        grid-area: box1;
+    }
+
+    .stopka {
+        grid-area: stopka;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    :root {
+        --clr: rgb(78, 79, 84);
+    }
+
+    body {
+        background: rgb(155, 155, 157);
+        overflow-x: hidden;
+    }
+    /* Pasek Nawigacji */
+    .linki {
+        position: fixed;
+        z-index: 25;
+        margin-top: 35px;
+    }
+
+    .twitter {
+        width: 33.125px;
+        height: 70px;
+        background-color: white;
+        z-index: 3;
+        background-size: cover;
+        position: relative;
+        float: left;
+        margin-left: 10px;
+    }
+
+    .facebook {
+        width: 33.125px;
+        height: 70px;
+        background-color: white;
+        z-index: 2;
+        position: relative;
+        float: left;
+        margin-left: 4px;
+    }
+
+    .instagram {
+        width: 33.125px;
+        height: 70px;
+        background-color: white;
+        z-index: 2;
+        position: relative;
+        float: left;
+        margin-left: 4px;
+    }
+
+    .youtube {
+        width: 33.125px;
+        height: 70px;
+        background-color: white;
+        z-index: 2;
+        position: relative;
+        float: left;
+        margin-left: 4px;
+    }
+
+    .facebook ion-icon {
+        font-size: 32px;
+        margin-top: 15px;
+        color: var(--clr);
+    }
+
+    .instagram ion-icon {
+        font-size: 32px;
+        margin-top: 15px;
+        color: var(--clr);
+    }
+
+    .twitter ion-icon {
+        font-size: 32px;
+        margin-top: 15px;
+        color: var(--clr);
+    }
+
+    .youtube ion-icon {
+        font-size: 32px;
+        margin-top: 15px;
+        color: var(--clr);
+    }
+
+    .twitter:hover ion-icon {
+        transform: scale(1.25);
+        transition-duration: 1s;
+    }
+
+    .facebook:hover ion-icon {
+        transform: scale(1.25);
+        transition-duration: 1s;
+    }
+
+    .instagram:hover ion-icon {
+        transform: scale(1.25);
+        transition-duration: 1s;
+    }
+
+    .youtube:hover ion-icon {
+        transform: scale(1.25);
+        transition-duration: 1s;
+    }
+    .navbarfixed {
+        padding-top: 35px;
+        background: var(--clr);
+        width: 100%;
+        height: 105px;
+        position: fixed;
+        z-index: 10;
+        box-shadow: 0px 10px 6px 0px rgba(0, 0, 0, 1);
+    }
+
+    .navigation {
+        position: relative;
+        width: 100%;
+        height: 70px;
+        background: #fff;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 45px;
+    }
+
+        .navigation ul {
+            display: flex;
+            width: 350px;
+            margin-right: 8%;
+        }
+
+            .navigation ul li {
+                position: relative;
+                list-style: none;
+                width: 70px;
+                height: 70px;
+                z-index: 1;
+            }
+
+                .navigation ul li a {
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    width: 100%;
+                    text-align: center;
+                    font-weight: 500;
+                }
+
+                    .navigation ul li a .icon {
+                        position: relative;
+                        display: block;
+                        line-height: 75px;
+                        font-size: 1.5em;
+                        text-align: center;
+                        transition: 0.5s;
+                        color: black;
+                    }
+
+                .navigation ul li.active a .icon {
+                    transform: translateY(-32px);
+                }
+
+                .navigation ul li a .text {
+                    position: absolute;
+                    color: var(--clr);
+                    font-weight: 400;
+                    font-size: 0.75em;
+                    letter-spacing: 0.05em;
+                    transition: 0.5s;
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+
+                .navigation ul li.active a .text {
+                    opacity: 1;
+                    transform: translateY(10px);
+                }
+
+    .indicator {
+        position: absolute;
+        top: -50%;
+        width: 70px;
+        height: 70px;
+        background: #B58C4F;
+        border-radius: 50%;
+        border: 6px solid var(--clr);
+        transition: 0.5s;
+    }
+
+        .indicator::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -22px;
+            width: 20px;
+            height: 20px;
+            background: transparent;
+            border-top-right-radius: 20px;
+            box-shadow: 1px -10px 0 0 var(--clr);
+        }
+
+        .indicator::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -22px;
+            width: 20px;
+            height: 20px;
+            background: transparent;
+            border-top-left-radius: 20px;
+            box-shadow: -1px -10px 0 0 var(--clr);
+        }
+
+    .navigation ul li:nth-child(1).active ~ .indicator {
+        transform: translateX(calc(70px * 0));
+    }
+
+    .navigation ul li:nth-child(2).active ~ .indicator {
+        transform: translateX(calc(70px * 1));
+    }
+
+    .navigation ul li:nth-child(3).active ~ .indicator {
+        transform: translateX(calc(70px * 2));
+    }
+
+    .navigation ul li:nth-child(4).active ~ .indicator {
+        transform: translateX(calc(70px * 3));
+    }
+
+    .navigation ul li:nth-child(5).active ~ .indicator {
+        transform: translateX(calc(70px * 4));
+    }
+    /* Logowanie */
+    .box {
+        position: absolute;
+        right: calc(50% - 165px);
+        top: 150px;
+        width: 380px;
+        height: 400px;
+        background: var(--clr);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+        .box::before {
+            content: '';
+            z-index: 1;
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 380px;
+            height: 850px;
+            transform-origin: bottom right;
+            background: linear-gradient(0deg,transparent,#B58C4F,#B58C4F);
+            animation: animate 6s linear infinite;
+        }
+
+        .box::after {
+            content: '';
+            z-index: 1;
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 380px;
+            height: 850px;
+            transform-origin: bottom right;
+            background: linear-gradient(0deg,transparent,#B58C4F,#B58C4F);
+            animation: animate 6s linear infinite;
+            animation-delay: -3s;
+        }
+
+    @keyframes animate {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    form {
+        position: absolute;
+        inset: 2px;
+        background: #23242a;
+        padding: 50px 40px;
+        border-radius: 8px;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+    }
+
+    h2 {
+        color: #B58C4F;
+        font-weight: 500;
+        text-align: center;
+        letter-spacing: 0.1em;
+    }
+
+    .inputBox {
+        position: relative;
+        width: 300px;
+        margin-top: 35px;
+    }
+
+        .inputBox input {
+            position: relative;
+            width: 100%;
+            padding: 20px 10px 10px;
+            background: transparent;
+            outline: none;
+            box-shadow: none;
+            border: none;
+            color: #23242a;
+            font-size: 1em;
+            letter-spacing: 0.05em;
+            transition: 0.5s;
+            z-index: 10;
+        }
+
+        .inputBox span {
+            position: absolute;
+            left: 0;
+            padding: 20px 0px 10px;
+            pointer-events: none;
+            font-size: 1em;
+            color: #B58C4F;
+            letter-spacing: 0.05em;
+            transition: 0.5s;
+        }
+
+        .inputBox input:valid ~ span,
+        .inputBox input:focus ~ span {
+            color: #B58C4F;
+            transform: translateX(0px) translateY(-34px);
+            font-size: 0.75em;
+        }
+
+        .inputBox i {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background: #B58C4F;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: 0.5s;
+            pointer-events: none;
+            z-index: 9;
+        }
+
+        .inputBox input:valid ~ i,
+        .inputBox input:focus ~ i {
+            height: 44px;
+        }
+
+    .links {
+        display: flex;
+    }
+
+        .links a {
+            margin: 10px 0;
+            font-size: 0.75em;
+            color: #B58C4F;
+            text-decoration: beige;
+        }
+
+            .links a:hover {
+                color: #8f8f8f;
+            }
+
+    input[type="submit"] {
+        border: none;
+        outline: none;
+        padding: 11px 25px;
+        background: #B58C4F;
+        cursor: pointer;
+        border-radius: 4px;
+        font-weight: 600;
+        width: 100px;
+        margin-top: 10px;
+    }
+
+        input[type="submit"]:active {
+            opacity: 0.8;
+        }
+    .stopka {
+        height: 100px;
+        background: #333;
+    }
+
+        .stopka ul {
+            display: flex;
+            height: 50px;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            justify-content: center;
+        }
+
+        .stopka li {
+            float: left;
+        }
+
+            .stopka li a {
+                display: block;
+                color: darkgrey;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+                .stopka li a:hover {
+                    background-color: #111;
+                }
+
+    .copyright {
+        padding-top: 5px;
+        width: 100%;
+        color: darkgrey;
+        text-align: center;
+    }
+</style>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Camprent</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="linki">
+            <div class="twitter">
+                <a href="https://twitter.com/?lang=pl%22%3E">
+                    <ion-icon name="logo-twitter"> </ion-icon>
+                </a>
+            </div>
+            <div class="facebook">
+                <a href="https://www.facebook.com/%22%3E">
+                    <span class="icon"> <ion-icon name="logo-facebook"> </ion-icon> </span>
+                </a>
+            </div>
+            <div class="instagram">
+                <a href="https://www.instagram.com/%22%">
+                    <ion-icon name="logo-instagram"> </ion-icon>
+                </a>
+            </div>
+            <div class="youtube">
+                <a href="https://www.youtube.com/%22%">
+                    <ion-icon name="logo-youtube"> </ion-icon>
+                </a>
+            </div>
+        </div>
+        <div class="navbarfixed">
+            <div class="navigation">
+                <ul>
+                    <li class="list">
+                        <a href="glowna.html">
+                            <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                            <span class="text">G³ówna</span>
+                        </a>
+                    </li>
+
+                    <li class="list active">
+                        <a href="profile.html">
+                            <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                            <span class="text">Profil</span>
+                        </a>
+                    </li>
+
+                    <li class="list">
+                        <a href="cv.html">
+                            <span class="icon"><ion-icon name="call-outline"></ion-icon></span>
+                            <span class="text">Kontakt</span>
+                        </a>
+                    </li>
+
+                    <li class="list">
+                        <a href="glowna.html #kolarz">
+                            <span class="icon"><ion-icon name="camera-outline"></ion-icon></span>
+                            <span class="text">Galeria</span>
+                        </a>
+                    </li>
+
+                    <li class="list">
+                        <a href="glowna.html #sektekst">
+                            <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                            <span class="text">Newsletter</span>
+                        </a>
+                    </li>
+                    <div class="indicator"></div>
+                </ul>
+            </div>
+        </div>
+        <div class="box1">
+            <div class="box">
+                <form autocomplete="off">
+                    <h2>Zaloguj</h2>
+                    <div class="inputBox">
+                        <input type="text" required="required">
+                        <span>Login</span>
+                        <i></i>
+                    </div>
+                    <div class="inputBox">
+                        <input type="password" required="required">
+                        <span>Haslo</span>
+                        <i></i>
+                    </div>
+                    <div class="links">
+                        <a href="#">Zapomniales hasla?</a>
+                        <a href="profile.html">Rejestracja</a>
+                    </div>
+                    <input type="submit" value="Login">
+                </form>
+            </div>
+        </div>
+        <div class="stopka">
+            <ul>
+                <li><a href="glowna.html">G³ówna</a></li>
+                <li><a href="profile.html">Rejestracja</a></li>
+                <li><a href="profilelogin.html">Logowanie</a></li>
+                <li><a href="cv.html">Kontakt</a></li>
+            </ul>
+            <div class="copyright">Copyright | Company Lorem Ipsum 2023</div>
+        </div>
+    </div>
+    <script>
+        const list = document.querySelectorAll('.list');
+        function activeLink() {
+            list.forEach(item => item.classList.remove('active'));
+            this.classList.add('active');
+        }
+        list.forEach(item =>
+            item.addEventListener('click', activeLink))
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

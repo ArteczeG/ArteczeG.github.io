@@ -1,0 +1,1182 @@
+﻿<!DOCTYPE html>
+<html>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+    /* GRID = główne rozmieszczenie strony */
+    .container {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 105px 300px 532px 250px 350px 350px 350px 170px;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "menu"
+            "logo"
+            "baner"
+            "tekst"
+            "paraimg"
+            "divyhv"
+            "sektekst"
+            "newsletter"
+            "kolarz"
+            "stopka";
+    }
+
+    .menu {
+        grid-area: menu;
+    }
+
+    .logo {
+        grid-area: logo;
+    }
+
+    .baner {
+        grid-area: baner;
+    }
+
+    .tekst {
+        grid-area: tekst;
+    }
+    .paraimg {
+        grid-area: paraimg;
+    }
+    .divyhv {
+        grid-area: divyhv;
+    }
+    .sektekst {
+        grid-area: sektekst;
+    }
+    .newsletter {
+        grid-area: newsletter;
+    }
+    .kolarz {
+        grid-area: kolarz;
+    }
+    .stopka {
+        grid-area: stopka;
+    }
+    /* Divy hover */
+    .container1 {
+        display: grid;
+        grid-template-columns: 20% 20% 20%;
+        grid-template-rows: 1fr;
+        gap: 0px 30px;
+        grid-template-areas:
+            "div1 div2 div3";
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 10px 10px 6px 0px rgba(0, 0, 0, 1);
+    }
+    .div1 {
+        grid-area: div1;
+        background-color: rgb(202, 202, 200);
+        height: 50%;
+        box-shadow: 10px 10px 6px 0px rgba(0, 0, 0, 1);
+        padding: 10px;
+        text-align: center;
+        justify-content: center;
+        font-size: large;
+        color: #B58C4F;
+        text-shadow: 1px 1px 2px white;
+        overflow: hidden;
+        transition-duration: 1s;
+    }
+    .div1:hover h1{
+        opacity:0;
+    }
+    .div1:hover{
+        opacity: 1;
+        background: url(https://maronicamper.com/wp-content/uploads/2021/11/DSC8544_2-1.webp);
+        background-size: cover;
+        background-position-y: center;
+    }
+    .div2 {
+        grid-area: div2;
+        background-color: whitesmoke;
+        height: 50%;
+        box-shadow: 10px 10px 6px 0px rgba(0, 0, 0, 1);
+        padding: 10px;
+        text-align: center;
+        justify-content: center;
+        font-size: large;
+        color: #B58C4F;
+        text-shadow: 1px 1px 2px white;
+        overflow: hidden;
+        transition-duration: 1s;
+    }
+    .div2:hover h1{
+        opacity:0;
+    }
+    .div2:hover{
+        opacity: 1;
+        background: url(https://maronicamper.com/wp-content/uploads/2022/10/DSC1284.webp);
+        background-size: cover;
+        background-position-y: center;
+    }
+    .div3 {
+        grid-area: div3;
+        background-color: var(--clr);
+        height: 50%;
+        box-shadow: 10px 10px 6px 0px rgba(0, 0, 0, 1);
+        padding: 10px;
+        text-align: center;
+        justify-content: center;
+        font-size: large;
+        color: #B58C4F;
+        text-shadow: 1px 1px 2px white;
+        overflow: hidden;
+        transition-duration: 1s;
+    }
+    .div3:hover h1{
+        opacity:0;
+    }
+    .div3:hover{
+        opacity: 1;
+        background: url(https://www.klaja.pl/pub/thumbs/img-pub-uploads-oferta-kampery-carado-2021-carado-t448-automat-20210826124205jpg-870-579-crop-1630068551-165451.jpg);
+        background-size: cover;
+        background-position-y: center;
+    }
+    .div1:hover {
+        box-shadow: inset 0px 0px 0px 10px rgb(202, 202, 200);
+        background-color: whitesmoke;
+    }
+    .div2:hover {
+        box-shadow: inset 0px 0px 0px 10px whitesmoke;
+        background-color: var(--clr);
+    }
+.div3:hover {
+    box-shadow:inset 0px 0px 0px 10px var(--clr);
+    background-color: rgb(202, 202, 200);
+}
+/* Galeria kolarz*/
+    .kolarz {
+        display: grid;
+        grid-template-columns: 30% 33% 33%;
+        grid-template-rows: 30% 30% 30%;
+        grid-auto-columns: 1fr;
+        gap: 15px 15px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "menuboczne slider1 slider1"
+            "menuboczne blog1 blog2"
+            "menuboczne blog3 blog4";
+        height: 800px;
+    }
+    .kolarz {
+        height: 1000px;
+        width: 100%;
+        padding-top: 55px;
+        margin-left: 15px;
+    }
+
+.slider1 { grid-area: slider1; }
+
+.blog1 { grid-area: blog1; }
+
+.blog2 { grid-area: blog2; }
+
+.blog3 { grid-area: blog3; }
+
+.blog4 { grid-area: blog4; }
+
+.menuboczne { grid-area: menuboczne; 
+}
+    .slider1 {
+        background: white;
+        box-shadow: 10px 10px 6px 0px rgba(0, 0, 0, 1);
+    }
+
+    .blog1 {
+        background: url(https://a.allegroimg.com/original/119c8c/c421b4784874a2fcd915a8d89df2);
+        background-size: cover;
+        background-position-y: center;
+        justify-content: center;
+        display: flex;
+        align-items: flex-end;
+        box-shadow: 10px 10px 6px 0px rgba(0, 0, 0, 1);
+    }
+
+    .blog2 {
+        background: url(https://www.gieldaklasykow.pl/wp-content/uploads/2019/06/porsche-tempo-mikafa-sport-camper-001-1024x576.jpg);
+        background-size: cover;
+        background-position-y: center;
+        justify-content: center;
+        display: flex;
+        align-items: flex-end;
+        box-shadow: 10px 10px 6px 0px rgba(0, 0, 0, 1);
+    }
+
+    .blog3 {
+        background: url(https://www.tommycampervans.com/wp-content/uploads/2022/06/tommy-151-220607DSC04075-1024x683.jpg);
+        background-size: cover;
+        background-position-y: center;
+        justify-content: center;
+        display: flex;
+        align-items: flex-end;
+        box-shadow: 10px 10px 6px 0px rgba(0, 0, 0, 1);
+    }
+
+    .blog4 {
+        background: url(https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/winnebago-industries-e-rv-rolling-1-1642611404.jpeg?crop=1.00xw:0.752xh;0,0.202xh&resize=1200:*);
+        background-size: cover;
+        background-position-y: center;
+        justify-content: center;
+        display: flex;
+        align-items: flex-end;
+        box-shadow: 10px 10px 6px 0px rgba(0, 0, 0, 1);
+    }
+
+    .menuboczne {
+        overflow: hidden;
+    }
+
+        .menuboczne ul {
+            position: relative;
+            left: 40px;
+            top: 10%;
+            transform: skewY(-15deg);
+        }
+
+            .menuboczne ul li {
+                position: relative;
+                list-style: none;
+                width: 80%;
+                background: #3e3f46;
+                padding: 8.2%;
+                z-index: var(--i);
+                transition: 0.5s;
+            }
+
+                .menuboczne ul li:hover {
+                    background: #33a3ee;
+                    transform: translateX(50px);
+                }
+
+                .menuboczne ul li::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: -40px;
+                    width: 40px;
+                    height: 100%;
+                    background: #2e3133;
+                    transform-origin: right;
+                    transform: skewY(45deg);
+                    transition: 0.5s;
+                }
+
+                .menuboczne ul li:hover::before {
+                    background: #2982b9;
+                }
+
+                .menuboczne ul li::after {
+                    content: '';
+                    position: absolute;
+                    top: -40px;
+                    left: 0px;
+                    width: 100%;
+                    height: 40px;
+                    background: #35383e;
+                    transform-origin: bottom;
+                    transform: skewX(45deg);
+                    transition: 0.5s;
+                }
+
+                .menuboczne ul li:hover::after {
+                    background: #2982b9;
+                }
+
+                .menuboczne ul li a {
+                    text-decoration: none;
+                    color: #999;
+                    display: block;
+                    text-transform: uppercase;
+                    letter-spacing: 0.05em;
+                    transition: 0.5s;
+                }
+
+                .menuboczne ul li:hover a {
+                    color: #fff;
+                }
+
+                .menuboczne ul li:last-child::after {
+                    box-shadow: -120px 120px 20px rgba(0,0,0,0.25);
+                }
+
+    .slider1 {
+        overflow: hidden;
+    }
+
+    .slider-container {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
+    .slider {
+        width: 100%;
+        max-width: 100%;
+        height: 400px;
+        text-align: center;
+        border-radius: 20px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .slides {
+        display: flex;
+        overflow-x: scroll;
+        position: relative;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+    }
+
+    .slide:nth-of-type(even) {
+        background-color: rgb(250, 246, 212);
+    }
+
+    .slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        width: 100%;
+        height: 400px;
+        scroll-snap-align: center;
+        margin-right: 0px;
+        box-sizing: border-box;
+        background: white;
+        transform-origin: center center;
+        transform: scale(1);
+    }
+
+    .slide__text {
+        font-size: 40px;
+        font-weight: bold;
+        font-family: sans-serif;
+    }
+
+    .slide a {
+        background: none;
+        border: none;
+    }
+
+    a.slide__prev,
+    .slider::before {
+        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+        left: 5%;
+    }
+
+    a.slide__next,
+    .slider::after {
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        right: 5%;
+    }
+
+    .slider::before,
+    .slider::after,
+    .slide__prev,
+    .slide__next {
+        position: absolute;
+        top: 48%;
+        width: 35px;
+        height: 35px;
+        border: double black 10px;
+        border-width: 0 4px 4px 0;
+        padding: 3px;
+        box-sizing: border-box;
+    }
+
+    .slider::before,
+    .slider::after {
+        content: "";
+        z-index: 1;
+        background: none;
+        pointer-events: none;
+    }
+
+    .slider__nav {
+        box-sizing: border-box;
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        width: 200px;
+        margin-left: -100px;
+        text-align: center;
+    }
+
+    .slider__navlink {
+        display: inline-block;
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        background-color: black;
+        margin: 0 10px 0 10px;
+    }
+
+    #slides__1 {
+        background-image: url(camp.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #slides__2 {
+        background-image: url(camp1.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #slides__3 {
+        background-image: url(camp2.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #slides__4 {
+        background-image: url(camp3.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .pasekblog {
+        width: 100%;
+        height: 40%;
+        background: black;
+        opacity: 0.5;
+        transition: 0.5s;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    .blurblog {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: flex-end;
+        transition: 0.5s;
+    }
+
+    .blog1:hover .blurblog {
+        backdrop-filter: blur(5px);
+    }
+
+        .blog1:hover .blurblog .pasekblog {
+            opacity: 0.7;
+            height: 70%;
+        }
+        .blog1 h3{
+            opacity: 0;
+            transition-duration: 1s;
+        }
+        .blog1:hover h3{
+            opacity: 0.7;
+        }
+    .blog2:hover .blurblog {
+        backdrop-filter: blur(5px);
+    }
+
+        .blog2:hover .blurblog .pasekblog {
+            opacity: 0.7;
+            height: 70%;
+        }
+        
+        .blog2 h3{
+            opacity: 0;
+            transition-duration: 1s;
+        }
+        .blog2:hover h3{
+            opacity: 0.7;
+        }
+    .blog3:hover .blurblog {
+        backdrop-filter: blur(5px);
+    }
+
+        .blog3:hover .blurblog .pasekblog {
+            opacity: 0.7;
+            height: 70%;
+        }
+        .blog3 h3{
+            opacity: 0;
+            transition-duration: 1s;
+        }
+        .blog3:hover h3{
+            opacity: 0.7;
+        }
+
+    .blog4:hover .blurblog {
+        backdrop-filter: blur(5px);
+    }
+
+        .blog4:hover .blurblog .pasekblog {
+            opacity: 0.7;
+            height: 70%;
+        }
+        .blog4 h3{
+            opacity: 0;
+            transition-duration: 1s;
+        }
+        .blog4:hover h3{
+            opacity: 0.7;
+        }
+/* * */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+        scroll-behavior: smooth !important;
+    }
+
+    :root {
+        --clr: rgb(78, 79, 84);
+    }
+
+    body {
+        background: rgb(155, 155, 157);
+        overflow-x: hidden;
+        margin-right: -15px;
+    }
+    /* Pasek Nawigacji */
+
+    .linki {
+        position: fixed;
+        z-index: 25;
+        margin-top: 35px;
+    }
+
+    .twitter {
+        width: 33.125px;
+        height: 70px;
+        background-color: white;
+        z-index: 3;
+        background-size: cover;
+        position: relative;
+        float: left;
+        margin-left: 10px;
+    }
+
+    .facebook {
+        width: 33.125px;
+        height: 70px;
+        background-color: white;
+        z-index: 2;
+        position: relative;
+        float: left;
+        margin-left: 4px;
+    }
+
+    .instagram {
+        width: 33.125px;
+        height: 70px;
+        background-color: white;
+        z-index: 2;
+        position: relative;
+        float: left;
+        margin-left: 4px;
+    }
+
+    .youtube {
+        width: 33.125px;
+        height: 70px;
+        background-color: white;
+        z-index: 2;
+        position: relative;
+        float: left;
+        margin-left: 4px;
+    }
+
+    .facebook ion-icon {
+        font-size: 32px;
+        margin-top: 15px;
+        color: var(--clr);
+    }
+
+    .instagram ion-icon {
+        font-size: 32px;
+        margin-top: 15px;
+        color: var(--clr);
+    }
+
+    .twitter ion-icon {
+        font-size: 32px;
+        margin-top: 15px;
+        color: var(--clr);
+    }
+
+    .youtube ion-icon {
+        font-size: 32px;
+        margin-top: 15px;
+        color: var(--clr);
+    }
+
+    .twitter:hover ion-icon {
+        transform: scale(1.25);
+        transition-duration: 1s;
+    }
+
+    .facebook:hover ion-icon {
+        transform: scale(1.25);
+        transition-duration: 1s;
+    }
+
+    .instagram:hover ion-icon {
+        transform: scale(1.25);
+        transition-duration: 1s;
+    }
+
+    .youtube:hover ion-icon {
+        transform: scale(1.25);
+        transition-duration: 1s;
+    }
+    .navbarfixed {
+        padding-top: 35px;
+        background: var(--clr);
+        width: 100%;
+        height: 105px;
+        position: fixed;
+        z-index: 10;
+        box-shadow: 0px 10px 6px 0px rgba(0, 0, 0, 1);
+    }
+    .navigation {
+        position: relative;
+        width: 100%;
+        height: 70px;
+        background: #fff;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 45px;
+    }
+
+        .navigation ul {
+            display: flex;
+            width: 350px;
+            margin-right: 8%;
+        }
+
+            .navigation ul li {
+                position: relative;
+                list-style: none;
+                width: 70px;
+                height: 70px;
+                z-index: 1;
+            }
+
+                .navigation ul li a {
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    width: 100%;
+                    text-align: center;
+                    font-weight: 500;
+                }
+
+                    .navigation ul li a .icon {
+                        position: relative;
+                        display: block;
+                        line-height: 75px;
+                        font-size: 1.5em;
+                        text-align: center;
+                        transition: 0.5s;
+                        color: black;
+                    }
+
+                .navigation ul li.active a .icon {
+                    transform: translateY(-32px);
+                }
+
+                .navigation ul li a .text {
+                    position: absolute;
+                    color: var(--clr);
+                    font-weight: 400;
+                    font-size: 0.75em;
+                    letter-spacing: 0.05em;
+                    transition: 0.5s;
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+
+                .navigation ul li.active a .text {
+                    opacity: 1;
+                    transform: translateY(10px);
+                }
+
+    .indicator {
+        position: absolute;
+        top: -50%;
+        width: 70px;
+        height: 70px;
+        background: #B58C4F;
+        border-radius: 50%;
+        border: 6px solid var(--clr);
+        transition: 0.5s;
+    }
+
+        .indicator::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -22px;
+            width: 20px;
+            height: 20px;
+            background: transparent;
+            border-top-right-radius: 20px;
+            box-shadow: 1px -10px 0 0 var(--clr);
+        }
+
+        .indicator::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -22px;
+            width: 20px;
+            height: 20px;
+            background: transparent;
+            border-top-left-radius: 20px;
+            box-shadow: -1px -10px 0 0 var(--clr);
+        }
+
+    .navigation ul li:nth-child(1).active ~ .indicator {
+        transform: translateX(calc(70px * 0));
+    }
+
+    .navigation ul li:nth-child(2).active ~ .indicator {
+        transform: translateX(calc(70px * 1));
+    }
+
+    .navigation ul li:nth-child(3).active ~ .indicator {
+        transform: translateX(calc(70px * 2));
+    }
+
+    .navigation ul li:nth-child(4).active ~ .indicator {
+        transform: translateX(calc(70px * 3));
+    }
+
+    .navigation ul li:nth-child(5).active ~ .indicator {
+        transform: translateX(calc(70px * 4));
+    }
+    /* LOGO */
+    .logo {
+        position: absolute;
+        top: 105px;
+        height: 300px;
+        width: 100%;
+        background: rgb(155, 155, 157);
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+        .logo img {
+            height: 150px;
+            width: 600px;
+            pointer-events: none;
+            user-select: none;
+            box-shadow: 10px 10px 6px 0px rgba(0, 0, 0, 1);
+        }
+    /* BANER */
+    .baner {
+        position: absolute;
+        top: 405px;
+        width: 101%;
+        height: 532px;
+        background-image: url("Baner.jpg");
+        background-size: cover;
+        box-shadow: 0px 10px px 0px rgba(0, 0, 0, 1);
+    }
+    .Guzik_galeria {
+        display: flex;
+        position: absolute;
+        left: calc(50% - 125px);
+        top: 400px;
+        font-size: 18px;
+        font-family: Verdana;
+        width: 250px;
+        height: 75px;
+        border-width: 1px;
+        color: #fff;
+        border-color: rgba(180, 0, 0, 0);
+        font-weight: bold;
+        box-shadow: 10px 10px 6px 0px rgba(0, 0, 0, 1);
+        text-shadow: 1px 1px 0px #2f6627;
+        background: #B58C4F;
+        text-decoration: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 5;
+        transition: 0.5s;
+        border-radius: 5px;
+    }
+
+        .Guzik_galeria:hover {
+            background-color: #8f6423;
+        }
+    .backdropbaner {
+        height: 100%;
+        width: 100%;
+        transition: 0.5s;
+    }
+
+    .Guzik_galeria:hover + .backdropbaner {
+        backdrop-filter: blur(5px);
+    }
+        /* NAGŁÓWEK */
+       .tekst{
+           width: 100%;
+           height: 250px;
+           background: rgb(202, 202, 200);
+
+       }
+    .tekst {
+        padding: 2% 5% 5% 5%;
+        text-align: center;
+    }
+
+        .tekst h1 {
+            border-bottom: 3px solid #B58C4F;
+            padding-bottom: 8px;
+            border-top: 3px solid #B58C4F;
+            padding-top: 8px;
+            margin-top: 20px;
+            color: white;
+            text-shadow: 1px 1px 2px black;
+            text-align: center;
+        }
+       /* PARAIMG */
+       .paraimg {
+        background-image: url(paraimg.jpg);
+        height: 100%; 
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+       }
+       /* SEKCJA TEKSTOWA 2*/
+    .sektekst {
+        padding-left: 5%;
+        width: 100%;
+        background: rgb(202, 202, 200);
+        font-family: Verdana;
+        text-align: justify;
+        font-weight: 600;
+        line-height: 200%;
+    }
+        .sektekst h1 {
+            
+            width: 90%;
+            margin-top: 20px;
+            color: white;
+            text-shadow: 1px 1px 2px black;
+            text-align: center;
+            border-bottom: 3px solid #B58C4F;
+            padding-bottom: 8px;
+            border-top: 3px solid #B58C4F;
+            padding-top: 8px;
+            font-family: 'Comic Sans MS';
+        }
+
+       /* NEWSLETTER*/
+    .newsletter {
+        background: var(--clr);
+        justify-content: center;
+        align-items: center;
+        padding: 0 5% 0 5%;
+        box-shadow: 0px 10px 6px 0px rgba(0, 0, 0, 1);
+    }
+    .container2 {
+      padding: 20px;
+    }
+    .newsletter input[type=text], input[type=submit] {
+        width: 30%;
+        padding: 12px;
+        margin: 8px 0;
+        display: inline-block;
+        box-shadow: 10px 10px 6px 0px rgba(0, 0, 0, 1);
+    }
+    .newsletter input[type=checkbox] {
+      margin-top: 16px;
+    }
+    .newsletter input[type=submit] {
+        background-color: #B58C4F;
+        color: white;
+        border: none;
+        margin-left: 8%;
+        box-shadow: 10px 10px 6px 0px rgba(0, 0, 0, 1);
+    }
+        .newsletter input[type=submit]:hover {
+            background-color: #8f6423;
+        }
+/* STOPKA */
+        .stopka {
+            height: 100px;
+            background: #333;
+        }
+    .stopka ul {
+        display: flex;
+        height: 50px;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+        justify-content: center;
+    }
+
+    .stopka li {
+        float: left;
+
+    }
+
+    .stopka li a {
+        display: block;
+        color: darkgrey;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    .stopka li a:hover {
+        background-color: #111;
+    }
+
+    
+   
+.copyright{
+    padding-top: 5px;
+    width: 100%;
+    color: darkgrey;
+    text-align: center;
+}
+</style>
+<head>
+    <meta charset="utf-8">
+    <title>Camprent</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Nawigacja -->
+        <div class="linki">
+            <div class="twitter">
+                <a href="https://twitter.com/?lang=pl%22%3E">
+                    <ion-icon name="logo-twitter"> </ion-icon>
+                </a>
+            </div>
+            <div class="facebook">
+                <a href="https://www.facebook.com/%22%3E">
+                    <span class="icon"> <ion-icon name="logo-facebook"> </ion-icon> </span>
+                </a>
+            </div>
+            <div class="instagram">
+                <a href="https://www.instagram.com/%22%">
+                    <ion-icon name="logo-instagram"> </ion-icon>
+                </a>
+            </div>
+            <div class="youtube">
+                <a href="https://www.youtube.com/%22%">
+                    <ion-icon name="logo-youtube"> </ion-icon>
+                </a>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="navbarfixed">
+                <div class="navigation">
+                    <ul>
+                        <li class="list active">
+                            <a href="#">
+                                <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                                <span class="text">Główna</span>
+                            </a>
+                        </li>
+
+                        <li class="list">
+                            <a href="profile.html">
+                                <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                                <span class="text">Profil</span>
+                            </a>
+                        </li>
+
+                        <li class="list">
+                            <a href="cv.html">
+                                <span class="icon"><ion-icon name="call-outline"></ion-icon></span>
+                                <span class="text">Kontakt</span>
+                            </a>
+                        </li>
+
+                        <li class="list">
+                            <a href="glowna.html #kolarz">
+                                <span class="icon"><ion-icon name="camera-outline"></ion-icon></span>
+                                <span class="text">Galeria</span>
+                            </a>
+                        </li>
+
+                        <li class="list">
+                            <a href="glowna.html #sektekst">
+                                <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                                <span class="text">Newsletter</span>
+                            </a>
+                        </li>
+                        <div class="indicator"></div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Logo -->
+        <div class="logo">
+            <img src="twitter_header_photo_1.png" />
+        </div>
+        <!-- Baner Zdjęcie -->
+        <div class="baner"><a href="#kolarz" class="Guzik_galeria">Galeria</a><div class="backdropbaner"></div></div>
+        <!-- Nagłówek Tekst -->
+        <div class="tekst">
+            <h1>Camprent to firma specjalizująca się w wynajmie kamperów i przyczep kempingowych.</h1><br /> Dzięki naszym usługom klienci mogą wyruszyć w podróż po całym kraju lub za granicę, mając ze sobą swój własny pokój z widokiem na świat. Nasza firma oferuje szeroki wybór pojazdów, w różnych rozmiarach i wyposażeniu, aby sprostać oczekiwaniom każdego klienta. Dodatkowo, Camprent dba o pełne zadowolenie klientów, zapewniając kompleksową obsługę i wsparcie na każdym etapie wypożyczenia.
+        </div>
+        <!-- Zdjęcie z Paralaxą -->
+        <div class="paraimg">
+
+        </div>
+        <!-- hover divy -->
+        <div class="divyhv">
+            <div class="container1">
+                <div class="div1"><h1>Poznaj model Maroni S-Camper</h1>
+                </div>
+                <div class="div2"><h1>Poznaj model Maroni A-Camper</h1></div>
+                <div class="div3"><h1>Poznaj model Carado T 448</h1></div>
+            </div>
+        </div>
+        <!-- sekcja tekstowa -->
+        <div class="sektekst" id="sektekst">
+            <h1>Jako wypożyczalnia kamperów i przyczep, Camprent oferuje wiele powodów, dla których klienci powinni wybrać naszą firmę. Oto kilka z nich:</h1></br>
+
+            Wysoka jakość floty: Nasze kampery i przyczepy są starannie utrzymywane i regularnie serwisowane, co gwarantuje ich bezpieczeństwo i niezawodność podczas podróży.</br>
+
+            Konkurencyjne ceny: Jesteśmy dumni z naszych konkurencyjnych cen, co oznacza, że nasi klienci otrzymują najlepsze wartości za swoje pieniądze.</br>
+
+            Bogate doświadczenie: Jako firma z długoletnim doświadczeniem w branży, mamy wiedzę i umiejętności, aby pomóc naszym klientom w wyborze odpowiedniego kampera lub przyczepy.</br>
+
+            Wygodna lokalizacja: Nasza wypożyczalnia znajduje się w dogodnym miejscu, co ułatwia odbiór i zwrot kampera lub przyczepy.</br>
+
+            Zróżnicowana oferta: Oferujemy różne modele kamperów i przyczep, aby nasi klienci mogli wybrać odpowiednią opcję dla siebie i swoich potrzeb.</br>
+
+            Profesjonalna obsługa klienta: Nasi pracownicy są zawsze gotowi do pomocy i odpowiedzi na wszelkie pytania, a także zapewniają szybką i skuteczną obsługę klienta.</br>
+
+        </div>
+        <!-- newsletter -->
+        <div class="newsletter" id="newsletter">
+            <form action="action_page.php">
+                <div class="container2">
+                </div>
+
+                <div class="container2">
+                    <input type="text" placeholder="Name" name="name" required>
+                    <input type="text" placeholder="Email address" name="mail" required>
+                    <input type="submit" value="Subscribe">
+                </div>
+            </form>
+        </div>
+        <!-- zdjęcia -->
+        <div class="kolarz" id="kolarz">
+            <div class="slider1">
+                <div class="slider-container">
+                    <div class="slider">
+                        <div class="slides">
+                            <div id="slides__1" class="slide">
+                                <span class="slide__text"></span>
+                                <a class="slide__prev" href="#slides__4" title="Next"></a>
+                                <a class="slide__next" href="#slides__2" title="Next"></a>
+                            </div>
+                            <div id="slides__2" class="slide">
+                                <span class="slide__text"></span>
+                                <a class="slide__prev" href="#slides__1" title="Prev"></a>
+                                <a class="slide__next" href="#slides__3" title="Next"></a>
+                            </div>
+                            <div id="slides__3" class="slide">
+                                <span class="slide__text"></span>
+                                <a class="slide__prev" href="#slides__2" title="Prev"></a>
+                                <a class="slide__next" href="#slides__4" title="Next"></a>
+                            </div>
+                            <div id="slides__4" class="slide">
+                                <span class="slide__text"></span>
+                                <a class="slide__prev" href="#slides__3" title="Prev"></a>
+                                <a class="slide__next" href="#slides__1" title="Prev"></a>
+                            </div>
+                        </div>
+                        <div class="slider__nav">
+                            <a class="slider__navlink" href="#slides__1"></a>
+                            <a class="slider__navlink" href="#slides__2"></a>
+                            <a class="slider__navlink" href="#slides__3"></a>
+                            <a class="slider__navlink" href="#slides__4"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="blog1">
+                <div class="blurblog"><a href="#" class="pasekblog">Cennik Kamperów<h3>    1-2 osobowy: 50 zł/godzina</br>
+                    3-4 osobowy: 70 zł/godzina</br>
+                    5-6 osobowy: 90 zł/godzina</br>
+                    7-8 osobowy: 110 zł/godzina</br>
+                
+               </h3></a></div>
+            </div>
+
+            <div class="blog2">
+                <div class="blurblog"><a href="#" class="pasekblog">Wynajem Kaperów<h3>W cenie wynajmu kampera na godzinę wliczone są paliwo oraz podstawowe ubezpieczenie. Wypożyczalnia może również zaoferować dodatkowe usługi, takie jak wynajem sprzętu kempingowego czy zaopatrzenie w żywność. Przy dłuższym wynajmie kampera na cały dzień lub kilka dni, ceny na godzinę mogą być niższe.</h3></a></div>
+            </div>
+
+            <div class="blog3">
+                <div class="blurblog"><a href="#" class="pasekblog">Cennik Przyczep <h3>    Przyczepa o wadze do 500 kg: 20 zł/godzina</br>
+                    Przyczepa o wadze od 501 kg do 750 kg: 25 zł/godzina</br>
+                    Przyczepa o wadze od 751 kg do 1000 kg: 30 zł/godzina</br>
+                    Przyczepa o wadze powyżej 1000 kg: 40 zł/godzina</br></h3></a></div>
+            </div>
+
+            <div class="blog4">
+                <div class="blurblog"><a href="#" class="pasekblog">Wynajem Przyczep<h3>Ceny te są orientacyjne i mogą ulec zmianie w zależności od lokalizacji i konkurencyjności rynku. Prosimy o dokładne zapoznanie się z cennikiem wypożyczalni przed dokonaniem rezerwacji.</h3></a></div>
+            </div>
+
+            <div class="menuboczne">
+                <ul>
+                    <li style="--i:6;"><a href="#">Główna</a></li>
+                    <li style="--i:5;"><a href="profile.html">Rejestracja</a></li>
+                    <li style="--i:4;"><a href="profilelogin.html">Login</a></li>
+                    <li style="--i:3;"><a href="cv.html">Kontakt</a></li>
+                    <li style="--i:2;"><a href="#newsletter">Blogi</a></li>
+                    <li style="--i:1;"><a href="#sektekst">newsletter</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- stopka -->
+        <div class="stopka">
+            <ul>
+                <li><a href="glowna.html">Główna</a></li>
+                <li><a href="profile.html">Rejestracja</a></li>
+                <li><a href="profilelogin.html">Logowanie</a></li>
+                <li><a href="cv.html">Kontakt</a></li>
+            </ul>
+            <div class="copyright">Copyright | Company Lorem Ipsum 2023</div>
+        </div>
+    </div>
+
+    <script>
+        const list = document.querySelectorAll('.list');
+        function activeLink() {
+            list.forEach(item => item.classList.remove('active'));
+            this.classList.add('active');
+        }
+        list.forEach(item =>
+            item.addEventListener('click', activeLink))
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
